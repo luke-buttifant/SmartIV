@@ -210,7 +210,7 @@ export default function Index() {
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-slate-400">
                 Since{" "}
                 <a
-                  href="https://tailwindcss.com/?ref=creative"
+                  href="https://github.com/luke-buttifant/SmartIV/blob/main/package.json"
                   className="text-slate-300"
                   target="_blank"
                 >
