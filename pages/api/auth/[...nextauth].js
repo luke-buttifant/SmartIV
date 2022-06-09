@@ -15,9 +15,12 @@ export default NextAuth({
     }),
     GoogleProvider({
         clientId: process.env.GOOGLE_ID,
-        clientSecret: process.env.GOOGLE_SECRET
+        clientSecret: process.env.GOOGLE_SECRET,
       })
   ],
+  pages: {
+      signIn: "/auth/signin"
+  },
   secret: "AS2UmJKh0Hm2CfPbAsPgNI2UfPwbhybMhaI9gwbmMwA=",
   jwt: {
       signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,

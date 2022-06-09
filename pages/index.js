@@ -15,9 +15,6 @@ export default function Component() {
   }
   return (
     <>
-                  <h1 className="text-4xl font-bold underline">
-      Tailwind Active
-    </h1>
       Not signed in <br />
       <button onClick={() => signIn()}>Sign in</button>
     </>
