@@ -62,7 +62,7 @@ const IndexDropdown = () => {
 
           <a onClick={() => signOut()}
             className={
-              "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center"
+              "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center cursor-pointer"
             }
           >
             Log Out
