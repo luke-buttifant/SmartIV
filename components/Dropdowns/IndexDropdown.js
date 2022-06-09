@@ -41,31 +41,26 @@ const IndexDropdown = () => {
           "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 w-[100%] md:w-48"
         }
       >
-        <Link href="/admin/dashboard">
           <a
-            href="#pablo"
+            href="#"
             className={
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center"
             }
           >
             View Profile
           </a>
-        </Link>
-        <Link href="/admin/settings">
           <a
-            href="#pablo"
+            href="#"
             className={
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center"
             }
           >
             Settings
           </a>
-        </Link>
         <div className="h-0 mx-4 my-2 border border-solid border-slate-100" />
 
 
           <a onClick={() => signOut()}
-            href="#pablo"
             className={
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center"
             }
