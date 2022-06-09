@@ -5,6 +5,9 @@ export default function Component() {
   if (session) {
     return (
       <>
+              <h1 className="text-4xl font-bold underline">
+      Tailwind Active
+    </h1>
         Signed in as {session.user.email} <br />
         <button onClick={() => signOut()}>Sign out</button>
       </>
@@ -12,6 +15,9 @@ export default function Component() {
   }
   return (
     <>
+                  <h1 className="text-4xl font-bold underline">
+      Tailwind Active
+    </h1>
       Not signed in <br />
       <button onClick={() => signIn()}>Sign in</button>
     </>
