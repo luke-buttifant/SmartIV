@@ -6,4 +6,4 @@ The final product will:
 
 The final product might: 
 - Encorporate emotion detection. 
-- Analalyse their answer and generate a more streamlined response. 
+- analyse their answer and generate a more streamlined response. 
