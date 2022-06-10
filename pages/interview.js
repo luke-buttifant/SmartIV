@@ -83,10 +83,10 @@ export default function Landing() {
         </div>
         <div className="container mb-2 flex mx-auto w-full items-center justify-center mt-10"
         >
-          <ul className="flex flex-col p-4">
+          <ul className="grid grid-cols-3 p-4">
             {interviewQuestions.map((question, i) => {
               return (
-                <li key={i} className="border-gray-400 flex flex-row mt-2 bg-gray-700 rounded-2xl border-2 p-6 hover:shadow-2xl text-white transition duration-200 ease-in-out transform hover:-translate-y-1 min-w-[100%]">
+                <li key={i} className="border-gray-400 flex flex-col mt-2 bg-gray-700 rounded-2xl border-2 p-6 hover:shadow-2xl text-white transition duration-200 ease-in-out transform hover:-translate-y-1 min-w-[100%]">
                   <div
                     className="select-none flex flex-1 items-center"
                   >
