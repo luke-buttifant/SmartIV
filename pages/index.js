@@ -99,7 +99,7 @@ export default function Index() {
                     Smash your next interview!
                   </h4>
                   <p className="text-md font-light mt-2 text-white">
-                    Nailing an interview has never been easier. Use SmartIV to prepare and recieve real time feedback on how to improve your responses. 
+                    Nailing an interview has never been easier. Use SmartIV to prepare and receive real time feedback on how to improve your responses. 
                   </p>
                 </blockquote>
               </div>
