@@ -1,5 +1,6 @@
 # SmartIV
-![LogoC](https://user-images.githubusercontent.com/64266031/172895561-639a4517-0e01-4a20-9ea4-d044ac2599e5.png)
+![localhost-3000-](https://user-images.githubusercontent.com/64266031/173103443-424625cd-90ca-4095-bae8-85bf39c06e5f.png)
+
 The final product will:
 - Allow users to enter interview questions.
 - Questions will be read aloud to the user. 
