@@ -55,11 +55,11 @@ export default function WebcamCapture() {
   }, [recordedChunks]);
   return (
     <>
-    <Webcam audio ref={webcamRef} />
+    <Webcam audio ref={webcamRef} style={{width: '100%'}} />
       {capturing ? (
         <button className="bg-red-50 py-2 px-6 rounded-lg mt-2" onClick={handleStopCaptureClick}>Stop Capture</button>
       ) : (
-        <div className="w-[100%]">
+        <div className="w-[100%] justify-center items-center">
            <button className="bg-red-50 py-2 px-6 rounded-lg mt-2 mx-auto text-centre" onClick={handleStartCaptureClick}>Start Capture</button>
         </div>
        

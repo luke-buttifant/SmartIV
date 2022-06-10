@@ -47,15 +47,16 @@ export default function Landing() {
 
   if(isFinished){
     return(
+      <>
+      <Navbar transparent/>
       <main className="min-h-screen">
-        <div className="grid grid-cols-2 mt-24 gap-0">
-          <div><Animations /></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-56">
+          <div><Animations questions={interviewQuestions} /></div>
           <div><WebcamCapture /></div>
         </div>
-        <div className="mx-auto text-center mt-10">
-          <TextToSpeech />
-        </div>
       </main>
+      <Footer />
+      </>
     )
   }
   else{
@@ -75,7 +76,7 @@ export default function Landing() {
           <ul className="flex flex-col p-4">
             {interviewQuestions.map((question, i) => {
               return (
-                <li key={i} className="border-gray-400 flex flex-row mt-2 bg-gray-700 rounded-2xl border-2 p-6 hover:shadow-2xl text-white transition duration-200 ease-in-out transform hover:-translate-y-1 ">
+                <li key={i} className="border-gray-400 flex flex-row mt-2 bg-gray-700 rounded-2xl border-2 p-6 hover:shadow-2xl text-white transition duration-200 ease-in-out transform hover:-translate-y-1 min-w-[100%]">
                   <div
                     className="select-none flex flex-1 items-center"
                   >
