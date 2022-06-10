@@ -64,8 +64,8 @@ export default function Landing() {
     <>
       <Navbar transparent />
       <div className="w-[80%] mx-auto mt-24">
-        <div className="flex flex-rows">
-        <div className="hidden md:flex"><img className="w-96" src="/img/questions.jpg"></img></div>
+        <div className="grid grid-cols-1 md:flex md:flex-row">
+        <div className="w-52 md:w-96 mx-auto md:mx-0"><img src="/img/questions.jpg"></img></div>
         <div><h1 className="font-bold text-4xl lg:text-6xl lg:mt-16 md:mt-8 mt-4">
           Interview Questions
         </h1>
