@@ -3,7 +3,7 @@ import { useSpeechSynthesis } from 'react-speech-kit';
 
 export default function TextToSpeech() {
   const [value, setValue] = useState('');
-  const { speak } = useSpeechSynthesis();
+  const { speak, voices} = useSpeechSynthesis();
 
   return (
     <div>
@@ -11,7 +11,7 @@ export default function TextToSpeech() {
         value={value}
         onChange={(event) => setValue(event.target.value)}
       />
-      <button onClick={() => speak({ text: value })}>Speak</button>
+      <button onClick={() => speak({ text: value, voice: voices[4] })}>Speak</button>
     </div>
   );
 }
