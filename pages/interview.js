@@ -64,9 +64,19 @@ export default function Landing() {
     <>
       <Navbar transparent />
       <div className="w-[80%] mx-auto mt-24">
-        <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Please enter an interview question!</label>
+        <div className="flex flex-rows">
+        <div className="hidden md:flex"><img className="w-96" src="/img/questions.jpg"></img></div>
+        <div><h1 className="font-bold text-4xl lg:text-6xl lg:mt-16 md:mt-8 mt-4">
+          Interview Questions
+        </h1>
+        <h2 className="mt-2">Enter any interview questions that you think may appear in an interview that you will be attending. </h2>
+        <h3>If you struggle to think of a question, use the 'Get Random Question' button to spawn a popular interview question. </h3>
+        </div>
+        </div>
+ 
+        <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 mt-4">Please enter an interview question!</label>
         <textarea ref={textBox} id="message" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
-        <div className="grid grid-cols-3 mt-10">
+        <div className="flex flex-rows mt-10 gap-4">
           <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg" onClick={handleAnswerOptionClick}>Get Random Question</button>
           <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg" onClick={handleAdd}>Add Question</button>
           <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg" onClick={handleFinish}>Finish</button>
