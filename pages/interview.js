@@ -45,6 +45,20 @@ export default function Landing() {
 
   }
 
+  if(isFinished){
+    return(
+      <main className="min-h-screen">
+        <div className="grid grid-cols-2 mt-24 gap-0">
+          <div><Animations /></div>
+          <div><WebcamCapture /></div>
+        </div>
+        <div className="mx-auto text-center mt-10">
+          <TextToSpeech />
+        </div>
+      </main>
+    )
+  }
+  else{
   return (
     <>
       <Navbar transparent />
@@ -82,15 +96,7 @@ export default function Landing() {
           </ul>
         </div>
       </div>
-      {isFinished ? <main className="min-h-screen">
-        <div className="grid grid-cols-2 mt-24 gap-0">
-          <div><Animations /></div>
-          <div><WebcamCapture /></div>
-        </div>
-        <div className="mx-auto text-center mt-10">
-          <TextToSpeech />
-        </div>
-      </main> : ""}
     </>
   );
+          }
 }
