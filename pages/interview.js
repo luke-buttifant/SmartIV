@@ -50,7 +50,7 @@ export default function Landing() {
       <>
       <Navbar transparent/>
       <main className="min-h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-56">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56">
           <div><Animations questions={interviewQuestions} /></div>
           <div><WebcamCapture /></div>
         </div>
