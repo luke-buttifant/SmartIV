@@ -29,7 +29,7 @@ export default function SignIn({ providers }) {
                     <input type="email" placeholder="Email Address..." onChange={e => setEmail(e.target.value)} className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
                       hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100" />
                     <button type="submit" className="group h-12 px-6 border-2 border-yellow-300 rounded-full transition duration-300 
-                      hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100 block font-semibold  text-yellow-300 text-sm hover:text-blue-600 sm:text-base bg-red-400">Login</button>
+                      hover:border-red-400 focus:bg-blue-50 active:bg-blue-100 block font-semibold  text-yellow-300 text-sm hover:text-red-400 sm:text-base bg-red-400 hover:bg-yellow-300">Login</button>
                   
                   <hr></hr>
                   {Object.values(providers).map((provider) => {
