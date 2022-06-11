@@ -1,17 +1,12 @@
 import React, { Suspense, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { useSpeechSynthesis } from 'react-speech-kit';
+
 
 import Interviewer from "../../Interviewer"
 
 const deg2rad = degrees => degrees * (Math.PI / 180);
 
 export default function Animations(questions) {
-  const { speak, voices} = useSpeechSynthesis();
-  useEffect(() => {
-    speak({ text: `Hi Luke, Welcome to the interview! To start, ... ${questions.questions[0]}` , voice: voices[4] })
-  }, [])
   return (
     <>
           <Canvas

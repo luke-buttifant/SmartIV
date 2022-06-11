@@ -4,7 +4,6 @@ import Navbar from "../components/Navbars/IndexNavbar.js";
 import WebcamCapture from "../components/interview/webcamCapture";
 import Footer from "../components/Footers/Footer.js";
 import Animations from "../components/interview/animations.js";
-import TextToSpeech from "../components/interview/text-to-speech.js";
 
 
 export default function Landing() {
@@ -51,8 +50,8 @@ export default function Landing() {
       <Navbar transparent/>
       <main className="min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56">
-          <div><Animations questions={interviewQuestions} /></div>
-          <div><WebcamCapture /></div>
+          <div><Animations  /></div>
+          <div><WebcamCapture questions={interviewQuestions}/></div>
         </div>
       </main>
       <Footer />

@@ -1,14 +1,20 @@
 import {React, useRef, useState, useCallback} from "react";
+import { useSpeechSynthesis } from 'react-speech-kit';
 import Webcam from "react-webcam";
 
-export default function WebcamCapture() {
+
+
+export default function WebcamCapture(questions) {
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
 
+  const { speak, voices} = useSpeechSynthesis();
+
 
   const handleStartCaptureClick = useCallback(() => {
+    askQuestion();
     setCapturing(true);
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
       mimeType: "video/webm"
@@ -18,7 +24,9 @@ export default function WebcamCapture() {
       handleDataAvailable
     );
     mediaRecorderRef.current.start();
-  }, [webcamRef, setCapturing, mediaRecorderRef]);
+
+    
+  }, [webcamRef, setCapturing, mediaRecorderRef, askQuestion]);
 
 
   const handleDataAvailable = useCallback(
@@ -53,16 +61,21 @@ export default function WebcamCapture() {
       setRecordedChunks([]);
     }
   }, [recordedChunks]);
+
+  function askQuestion(){
+      speak({ text: `Hi Luke, Welcome to the interview! To start, ... ${questions.questions[0]}` , voice: voices[4] })
+    };
+
+
   return (
     <>
-    <Webcam audio ref={webcamRef} style={{width: '100%'}} />
+    <Webcam muted audio ref={webcamRef} style={{width: '100%'}} />
       {capturing ? (
         <button className="bg-red-50 py-2 px-6 rounded-lg mt-2" onClick={handleStopCaptureClick}>Stop Capture</button>
       ) : (
         <div className="w-[100%] justify-center items-center">
-           <button className="bg-red-50 py-2 px-6 rounded-lg mt-2 mx-auto text-centre" onClick={handleStartCaptureClick}>Start Capture</button>
+           <button className="bg-red-50 py-2 px-6 rounded-lg mt-2 mx-auto text-centre" onClick={handleStartCaptureClick}>Start Interview</button>
         </div>
-       
       )}
       {recordedChunks.length > 0 && (
         <button onClick={handleDownload}>Download</button>

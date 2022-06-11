@@ -38,7 +38,7 @@ export default function Navbar(props) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="flex items-center">
-                {auth ?  <a href="/auth/signin" className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold cursor-pointer">Sign In</a> : <IndexDropdown />}
+                {auth ?  <a href="/auth/signin" className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs font-bold cursor-pointer uppercase">SIGN IN</a> : <IndexDropdown />}
                 
               </li>
 
