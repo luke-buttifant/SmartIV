@@ -1,16 +1,16 @@
 import {React, useRef, useState, useCallback} from "react";
-import { useSpeechSynthesis } from 'react-speech-kit';
 import Webcam from "react-webcam";
 
 
 
+
 export default function WebcamCapture(questions) {
+  var sdk = require("microsoft-cognitiveservices-speech-sdk");
+  
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
-
-  const { speak, voices} = useSpeechSynthesis();
 
 
   const handleStartCaptureClick = useCallback(() => {
@@ -62,8 +62,41 @@ export default function WebcamCapture(questions) {
     }
   }, [recordedChunks]);
 
+
+
+
+
+ 
+
+  var key = process.env.MICROSOFT_AZURE_KEY;
+  var region = process.env.MICROSOFT_AZURE_REGION;
+
+  const speechConfig = sdk.SpeechConfig.fromSubscription(key, region);
+
+  // The language of the voice that speaks.
+  speechConfig.speechSynthesisVoiceName = "en-GB-RyanNeural"; 
+
+  // Create the speech synthesizer.
+  var synthesizer = new sdk.SpeechSynthesizer(speechConfig);
+  
   function askQuestion(){
-      speak({ text: `Hi Luke, Welcome to the interview! To start, ... ${questions.questions[0]}` , voice: voices[4] })
+      synthesizer.speakTextAsync(`Hi Luke, Welcome to the interview! To start, ... ${questions.questions[0]}`, 
+      function (result) {
+        if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+          console.log("synthesis finished.");
+        } else {
+          console.error("Speech synthesis canceled, " + result.errorDetails +
+              "\nDid you set the speech resource key and region values?");
+        }
+        synthesizer.close();
+        synthesizer = null;
+      },
+          function (err) {
+        console.trace("err - " + err);
+        synthesizer.close();
+        synthesizer = null;
+      });
+      console.log("Now synthesizing to: " + audioFile);
     };
 
 
