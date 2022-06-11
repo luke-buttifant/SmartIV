@@ -7,11 +7,13 @@ import {BiVideoRecording} from "react-icons/bi"
 import {FaCut} from "react-icons/fa"
 import {GiTakeMyMoney} from "react-icons/gi"
 import {AiFillGithub} from "react-icons/ai"
+import { getSession } from "next-auth/react";
 
 import IndexNavbar from "../components/Navbars/IndexNavbar.js";
 import Footer from "../components/Footers/Footer.js";
 
 export default function Index() {
+
   return (
     <>
       <IndexNavbar fixed />

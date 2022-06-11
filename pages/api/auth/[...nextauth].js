@@ -11,7 +11,6 @@ const prisma = new PrismaClient()
 
 export default NextAuth({
   providers: [
-    // OAuth authentication providers...
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET
@@ -38,9 +37,10 @@ export default NextAuth({
       })
   ],
   pages: {
-      signIn: "/auth/signin"
+      signIn: "/auth/signin",
+      verifyRequest: '/auth/verify-request'
   },
-  secret: "AS2UmJKh0Hm2CfPbAsPgNI2UfPwbhybMhaI9gwbmMwA=",
+  secret: process.env.NEXTAUTH_SECRET,
   jwt: {
       signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
   }, 

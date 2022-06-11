@@ -1,9 +1,11 @@
+import { useSession } from "next-auth/react"
 import React from "react";
-
-import Navbar from "../components/Navbars/AuthNavbar.js";
-import Footer from "../components/Footers/Footer.js";
+import Navbar from "../../components/Navbars/IndexNavbar.js";
+import Footer from "../../components/Footers/Footer.js";
 
 export default function Profile() {
+  const { data: session, status } = useSession()
+  if (status === "authenticated") {
   return (
     <>
       <Navbar transparent />
@@ -50,7 +52,7 @@ export default function Profile() {
                     <div className="relative">
                       <img
                         alt="..."
-                        src="/img/team-2-800x800.jpg"
+                        src={session.user.image}
                         className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                       />
                     </div>
@@ -61,7 +63,7 @@ export default function Profile() {
                         className="bg-slate-700 active:bg-slate-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                         type="button"
                       >
-                        Connect
+                        Edit Info
                       </button>
                     </div>
                   </div>
@@ -96,19 +98,11 @@ export default function Profile() {
                 </div>
                 <div className="text-center mt-12">
                   <h3 className="text-4xl font-semibold leading-normal mb-2 text-slate-700 mb-2">
-                    Jenna slates
+                  {session.user.name}
                   </h3>
                   <div className="text-sm leading-normal mt-0 mb-2 text-slate-400 font-bold uppercase">
                     <i className="fas fa-map-marker-alt mr-2 text-lg text-slate-400"></i>{" "}
-                    Los Angeles, California
-                  </div>
-                  <div className="mb-2 text-slate-600 mt-10">
-                    <i className="fas fa-briefcase mr-2 text-lg text-slate-400"></i>
-                    Solution Manager - Creative Tim Officer
-                  </div>
-                  <div className="mb-2 text-slate-600">
-                    <i className="fas fa-university mr-2 text-lg text-slate-400"></i>
-                    University of Computer Science
+                    {session.user.email}
                   </div>
                 </div>
                 <div className="mt-10 py-10 border-t border-slate-200 text-center">
@@ -140,3 +134,6 @@ export default function Profile() {
     </>
   );
 }
+}
+
+

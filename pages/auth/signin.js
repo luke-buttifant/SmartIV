@@ -9,7 +9,9 @@ export default function SignIn({ providers }) {
 
     if (!email) return false;
 
-    signIn('email', { email, redirect: false })
+    signIn('email', { email, 
+      callbackUrl: `${window.location.origin}/auth/verify-request`
+    })
   }
 
   return (
@@ -63,15 +65,15 @@ export default function SignIn({ providers }) {
 }
 
 export async function getServerSideProps(context) {
-  const session = await getSession({ req: context.req });
-  if (session?.user) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
-  }
+  // const session = await getSession({ req: context.req });
+  // if (session?.user) {
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   const providers = await getProviders()
   return {

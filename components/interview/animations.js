@@ -13,7 +13,7 @@ export default function Animations(questions) {
                  camera={{
                   fov: 80,
                   position: [0, 0, 0],
-                  rotation: [0, deg2rad(-20), deg2rad(180)],
+                  rotation: [0, 0, 0],
                 }}
          style={{
             marginInline: "auto",
