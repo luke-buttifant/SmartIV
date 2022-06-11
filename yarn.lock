@@ -2918,7 +2918,7 @@
   "resolved" "https://registry.npmjs.org/process/-/process-0.11.10.tgz"
   "version" "0.11.10"
 
-"prop-types@^15.6.0", "prop-types@^15.7.2", "prop-types@^15.8.1":
+"prop-types@^15.6.0", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -3009,11 +3009,6 @@
     "loose-envify" "^1.1.0"
     "scheduler" "^0.21.0"
 
-"react-speech-kit@^3.0.1":
-  "integrity" "sha512-MXNOciISanhmnxpHJkBOev3M3NPDpW1T7nTc/eGw5pO9cXpoUccRxZkmr/IlpTPbPEneDNeTmbwri/YweyctZg=="
-  "resolved" "https://registry.npmjs.org/react-speech-kit/-/react-speech-kit-3.0.1.tgz"
-  "version" "3.0.1"
-
 "react-use-measure@^2.1.1":
   "integrity" "sha512-nocZhN26cproIiIduswYpV5y5lQpSQS1y/4KuvUCjSKmw7ZWIS/+g3aFnX3WdBkyuGUtTLif3UTqnLLhbDoQig=="
   "resolved" "https://registry.npmjs.org/react-use-measure/-/react-use-measure-2.1.1.tgz"
@@ -3026,7 +3021,7 @@
   "resolved" "https://registry.npmjs.org/react-webcam/-/react-webcam-7.0.1.tgz"
   "version" "7.0.1"
 
-"react@*", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.11.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0", "react@^16.8.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18", "react@^17.0.2 || ^18.0.0-0", "react@^18.0.0", "react@^18.1.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.13", "react@>=16.2.0", "react@>=16.8", "react@>=16.x", "react@>=17.0", "react@>=18.0":
+"react@*", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.11.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18", "react@^17.0.2 || ^18.0.0-0", "react@^18.0.0", "react@^18.1.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.13", "react@>=16.2.0", "react@>=16.8", "react@>=16.x", "react@>=17.0", "react@>=18.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"

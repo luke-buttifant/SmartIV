@@ -4,6 +4,7 @@ import GoogleProvider from 'next-auth/providers/google'
 import EmailProvider from "next-auth/providers/email"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
+import EmailTemplate from './email_template'
 
 
 const prisma = new PrismaClient()
@@ -28,7 +29,12 @@ export default NextAuth({
             pass: process.env.EMAIL_SERVER_PASSWORD
           }
         },
-        from: process.env.EMAIL_FROM
+        from: process.env.EMAIL_FROM,
+        sendVerificationRequest({
+          identifier: email,
+          url,
+          provider: { server, from },
+        }) {EmailTemplate(url, email, server, from)},
       })
   ],
   pages: {
