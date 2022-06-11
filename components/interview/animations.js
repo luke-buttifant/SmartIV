@@ -10,7 +10,11 @@ export default function Animations(questions) {
   return (
     <>
           <Canvas
-         camera={{ position: [0, 10, 10], fov: 10}}
+                 camera={{
+                  fov: 80,
+                  position: [0, 0, 0],
+                  rotation: [0, deg2rad(-20), deg2rad(180)],
+                }}
          style={{
             marginInline: "auto",
             backgroundColor: '#F5F5F5',

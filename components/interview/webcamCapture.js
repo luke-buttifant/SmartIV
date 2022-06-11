@@ -1,16 +1,15 @@
 import {React, useRef, useState, useCallback} from "react";
 import Webcam from "react-webcam";
-
-
-
+import { randInt } from "three/src/math/mathutils";
 
 export default function WebcamCapture(questions) {
   var sdk = require("microsoft-cognitiveservices-speech-sdk");
-  
+
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
+  const [questionCount, setQuestionCount] = useState(0)
 
 
   const handleStartCaptureClick = useCallback(() => {
@@ -63,13 +62,8 @@ export default function WebcamCapture(questions) {
   }, [recordedChunks]);
 
 
-
-
-
- 
-
-  var key = process.env.MICROSOFT_AZURE_KEY;
-  var region = process.env.MICROSOFT_AZURE_REGION;
+  const key = process.env.NEXT_PUBLIC_MICROSOFT_AZURE_KEY;
+  const region = process.env.NEXT_PUBLIC_MICROSOFT_AZURE_REGION;
 
   const speechConfig = sdk.SpeechConfig.fromSubscription(key, region);
 
@@ -78,15 +72,21 @@ export default function WebcamCapture(questions) {
 
   // Create the speech synthesizer.
   var synthesizer = new sdk.SpeechSynthesizer(speechConfig);
+
+  var openingLines = ["Ok that's great!, ", "Great!, ", "That makes a lot of sense! Moving on, "]
+  var greeting = "Hi Luke, Welcome to the interview! To start, ... "
   
   function askQuestion(){
-      synthesizer.speakTextAsync(`Hi Luke, Welcome to the interview! To start, ... ${questions.questions[0]}`, 
+    let question; 
+    questionCount === 0 ? question = greeting + questions.questions[questionCount] : 
+    question = openingLines[randInt(0, openingLines.length)] + questions.questions[questionCount]
+
+      synthesizer.speakTextAsync(question, 
       function (result) {
         if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
           console.log("synthesis finished.");
         } else {
-          console.error("Speech synthesis canceled, " + result.errorDetails +
-              "\nDid you set the speech resource key and region values?");
+          console.error("Speech synthesis canceled, " + result.errorDetails)
         }
         synthesizer.close();
         synthesizer = null;
@@ -96,7 +96,7 @@ export default function WebcamCapture(questions) {
         synthesizer.close();
         synthesizer = null;
       });
-      console.log("Now synthesizing to: " + audioFile);
+      setQuestionCount(questionCount + 1)
     };
 
 
@@ -104,10 +104,14 @@ export default function WebcamCapture(questions) {
     <>
     <Webcam muted audio ref={webcamRef} style={{width: '100%'}} />
       {capturing ? (
+        <>
+        <button className="bg-red-50 py-2 px-6 rounded-lg mt-2 mx-auto text-centre" onClick={askQuestion}>Next Question</button>
         <button className="bg-red-50 py-2 px-6 rounded-lg mt-2" onClick={handleStopCaptureClick}>Stop Capture</button>
+        </>
       ) : (
         <div className="w-[100%] justify-center items-center">
            <button className="bg-red-50 py-2 px-6 rounded-lg mt-2 mx-auto text-centre" onClick={handleStartCaptureClick}>Start Interview</button>
+           
         </div>
       )}
       {recordedChunks.length > 0 && (
