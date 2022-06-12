@@ -20,9 +20,9 @@ export default function Index() {
         <div className="container mx-auto items-center flex flex-wrap">
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
-              <h2 className="font-semibold text-4xl text-slate-600">
+              <h1 className="font-semibold text-4xl text-slate-600">
               SmartIV an intelligent interview practise platform.
-              </h2>
+              </h1>
               <p className="mt-4 text-lg leading-relaxed text-slate-500">
                 Made by job seekers for job seekers!
                 Use a combination of tools to help you practise for your next interview.
@@ -100,9 +100,9 @@ export default function Index() {
                       className="text-slate-700 fill-current"
                     ></polygon>
                   </svg>
-                  <h4 className="text-xl font-bold text-white">
+                  <h2 className="text-xl font-bold text-white">
                     Smash your next interview!
-                  </h4>
+                  </h2>
                   <p className="text-md font-light mt-2 text-white">
                     Nailing an interview has never been easier. Use SmartIV to prepare and receive real time feedback on how to improve your responses. 
                   </p>
@@ -115,9 +115,9 @@ export default function Index() {
                       <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
                         <MdOutlinePersonPin size={30}/> 
                       </div>
-                      <h6 className="text-xl mb-1 font-semibold">
+                      <h3 className="text-xl mb-1 font-semibold">
                         Automated Interviewer
-                      </h6>
+                      </h3>
                       <p className="mb-4 text-slate-500">
                         Get your questions read out to you in real time!
                       </p>
@@ -128,9 +128,9 @@ export default function Index() {
                       <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
                         <BiVideoRecording size={30}/>
                       </div>
-                      <h6 className="text-xl mb-1 font-semibold">
+                      <h4 className="text-xl mb-1 font-semibold">
                         Record your response
-                      </h6>
+                      </h4>
                       <p className="mb-4 text-slate-500">
                         Record and play back your interview to evaluate your performance.
                       </p>
@@ -143,7 +143,7 @@ export default function Index() {
                       <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
                       <RiEmotionLaughLine size={30}/> 
                       </div>
-                      <h6 className="text-xl mb-1 font-semibold">Emotion Detection</h6>
+                      <h5 className="text-xl mb-1 font-semibold">Emotion Detection</h5>
                       <p className="mb-4 text-slate-500">
                         Our AI proffesional will evaluate your facial expressions and give you real time feedback on how to improve!
                       </p>
