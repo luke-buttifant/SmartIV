@@ -34,24 +34,27 @@ export default function Footer() {
               </h5>
               <div className="mt-6 lg:mb-0 mb-6">
                 <button
+                aria-label="Twitter Button"
                   className="bg-white text-sky-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
                  <FiTwitter size={26} className="mx-auto"/>
                 </button>
                 <button
+                aria-label="Facebook Button"
                   className="bg-white text-sky-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
                   <FiFacebook size={26} className="mx-auto"/>
                 </button>
                 <button
+                aria-label="Instagram Button"
                   className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
                   <FiInstagram size={26} className="mx-auto"/>
                 </button>
-                <button
+                <button aria-label="GitHub Button"
                   className="bg-white text-slate-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >

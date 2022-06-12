@@ -43,7 +43,7 @@ const PagesDropdown = () => {
         >
           Admin Layout
         </span>
-        <Link href="/admin/dashboard">
+        <a href="/admin/dashboard">
           <a
             href="#pablo"
             className={
@@ -52,8 +52,8 @@ const PagesDropdown = () => {
           >
             Dashboard
           </a>
-        </Link>
-        <Link href="/admin/settings">
+        </a>
+        <a href="/admin/settings">
           <a
             href="#pablo"
             className={
@@ -62,8 +62,8 @@ const PagesDropdown = () => {
           >
             Settings
           </a>
-        </Link>
-        <Link href="/admin/tables">
+        </a>
+        <a href="/admin/tables">
           <a
             href="#pablo"
             className={
@@ -72,8 +72,8 @@ const PagesDropdown = () => {
           >
             Tables
           </a>
-        </Link>
-        <Link href="/admin/maps">
+        </a>
+        <a href="/admin/maps">
           <a
             href="#pablo"
             className={
@@ -82,7 +82,7 @@ const PagesDropdown = () => {
           >
             Maps
           </a>
-        </Link>
+        </a>
         <div className="h-0 mx-4 my-2 border border-solid border-slate-100" />
         <span
           className={
@@ -91,7 +91,7 @@ const PagesDropdown = () => {
         >
           Auth Layout
         </span>
-        <Link href="/auth/login">
+        <a href="/auth/login">
           <a
             href="#pablo"
             className={
@@ -100,8 +100,8 @@ const PagesDropdown = () => {
           >
             Login
           </a>
-        </Link>
-        <Link href="/auth/register">
+        </a>
+        <a href="/auth/register">
           <a
             href="#pablo"
             className={
@@ -110,7 +110,7 @@ const PagesDropdown = () => {
           >
             Register
           </a>
-        </Link>
+        </a>
         <div className="h-0 mx-4 my-2 border border-solid border-slate-100" />
         <span
           className={
@@ -119,7 +119,7 @@ const PagesDropdown = () => {
         >
           No Layout
         </span>
-        <Link href="/landing">
+        <a href="/landing">
           <a
             href="#pablo"
             className={
@@ -128,8 +128,8 @@ const PagesDropdown = () => {
           >
             Landing
           </a>
-        </Link>
-        <Link href="/profile">
+        </a>
+        <a href="/profile">
           <a
             href="#pablo"
             className={
@@ -138,7 +138,7 @@ const PagesDropdown = () => {
           >
             Profile
           </a>
-        </Link>
+        </a>
       </div>
     </>
   );

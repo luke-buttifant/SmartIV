@@ -60,13 +60,13 @@ const IndexDropdown = () => {
         <div className="h-0 mx-4 my-2 border border-solid border-slate-100" />
 
 
-          <a onClick={() => signOut()}
+          <button onClick={() => signOut()}
             className={
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center cursor-pointer"
             }
           >
             Log Out
-          </a>
+          </button>
       </div>
       </>
     )

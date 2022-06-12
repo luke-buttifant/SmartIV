@@ -21,14 +21,14 @@ export default function Sidebar() {
             <i className="fas fa-bars"></i>
           </button>
           {/* Brand */}
-          <Link href="/">
+          <a href="/">
             <a
               href="#pablo"
               className="md:block text-left md:pb-2 text-slate-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             >
               Notus NextJS
             </a>
-          </Link>
+          </a>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
             <li className="inline-block relative">
@@ -49,14 +49,14 @@ export default function Sidebar() {
             <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-slate-200">
               <div className="flex flex-wrap">
                 <div className="w-6/12">
-                  <Link href="/">
+                  <a href="/">
                     <a
                       href="#pablo"
                       className="md:block text-left md:pb-2 text-slate-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                     >
                       Notus NextJS
                     </a>
-                  </Link>
+                  </a>
                 </div>
                 <div className="w-6/12 flex justify-end">
                   <button
@@ -90,7 +90,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
-                <Link href="/admin/dashboard">
+                <a href="/admin/dashboard">
                   <a
                     href="#pablo"
                     className={
@@ -110,11 +110,11 @@ export default function Sidebar() {
                     ></i>{" "}
                     Dashboard
                   </a>
-                </Link>
+                </a>
               </li>
 
               <li className="items-center">
-                <Link href="/admin/settings">
+                <a href="/admin/settings">
                   <a
                     href="#pablo"
                     className={
@@ -134,11 +134,11 @@ export default function Sidebar() {
                     ></i>{" "}
                     Settings
                   </a>
-                </Link>
+                </a>
               </li>
 
               <li className="items-center">
-                <Link href="/admin/tables">
+                <a href="/admin/tables">
                   <a
                     href="#pablo"
                     className={
@@ -158,11 +158,11 @@ export default function Sidebar() {
                     ></i>{" "}
                     Tables
                   </a>
-                </Link>
+                </a>
               </li>
 
               <li className="items-center">
-                <Link href="/admin/maps">
+                <a href="/admin/maps">
                   <a
                     href="#pablo"
                     className={
@@ -182,7 +182,7 @@ export default function Sidebar() {
                     ></i>{" "}
                     Maps
                   </a>
-                </Link>
+                </a>
               </li>
             </ul>
 
@@ -196,7 +196,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
               <li className="items-center">
-                <Link href="/auth/login">
+                <a href="/auth/login">
                   <a
                     href="#pablo"
                     className="text-slate-700 hover:text-slate-500 text-xs uppercase py-3 font-bold block"
@@ -204,11 +204,11 @@ export default function Sidebar() {
                     <i className="fas fa-fingerprint text-slate-400 mr-2 text-sm"></i>{" "}
                     Login
                   </a>
-                </Link>
+                </a>
               </li>
 
               <li className="items-center">
-                <Link href="/auth/register">
+                <a href="/auth/register">
                   <a
                     href="#pablo"
                     className="text-slate-700 hover:text-slate-500 text-xs uppercase py-3 font-bold block"
@@ -216,7 +216,7 @@ export default function Sidebar() {
                     <i className="fas fa-clipboard-list text-slate-300 mr-2 text-sm"></i>{" "}
                     Register
                   </a>
-                </Link>
+                </a>
               </li>
             </ul>
 
@@ -230,7 +230,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
               <li className="items-center">
-                <Link href="/landing">
+                <a href="/landing">
                   <a
                     href="#pablo"
                     className="text-slate-700 hover:text-slate-500 text-xs uppercase py-3 font-bold block"
@@ -238,11 +238,11 @@ export default function Sidebar() {
                     <i className="fas fa-newspaper text-slate-400 mr-2 text-sm"></i>{" "}
                     Landing Page
                   </a>
-                </Link>
+                </a>
               </li>
 
               <li className="items-center">
-                <Link href="/profile">
+                <a href="/profile">
                   <a
                     href="#pablo"
                     className="text-slate-700 hover:text-slate-500 text-xs uppercase py-3 font-bold block"
@@ -250,7 +250,7 @@ export default function Sidebar() {
                     <i className="fas fa-user-circle text-slate-400 mr-2 text-sm"></i>{" "}
                     Profile Page
                   </a>
-                </Link>
+                </a>
               </li>
             </ul>
 

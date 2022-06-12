@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
-import Link from "next/link";
 import {MdOutlinePersonPin} from "react-icons/md"
 import {RiEmotionLaughLine} from "react-icons/ri"
 import {BiVideoRecording} from "react-icons/bi"
 import {FaCut} from "react-icons/fa"
 import {GiTakeMyMoney} from "react-icons/gi"
 import {AiFillGithub} from "react-icons/ai"
-import { getSession } from "next-auth/react";
+
 
 import IndexNavbar from "../components/Navbars/IndexNavbar.js";
 import Footer from "../components/Footers/Footer.js";
@@ -48,9 +47,11 @@ export default function Index() {
           </div>
         </div>
         <img
+          width="1920"
+          height="1537"
           className="absolute top-0 b-auto right-0 pt-24 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860-px"
           src="/img/illustration.webp"
-          alt="..."
+          alt="two people conversing"
         />
       </section>
 
@@ -81,8 +82,10 @@ export default function Index() {
             <div className="w-100  px-12 md:px-4 mr-0 lg:mr-10">
               <div className="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-slate-700">
                 <img
-                  alt="..."
-                  src="/img/conference-call.jpg"
+                  width="1920"
+                  height="1440"
+                  alt="Lady waving from laptop"
+                  src="/img/conference-call.webp"
                   className="w-full align-middle rounded-t-lg"
                 />
                 <blockquote className="relative p-8 mb-4">
@@ -186,13 +189,15 @@ export default function Index() {
 
             <div className="w-full md:w-6/12 mr-auto px-4 pt-24 md:pt-0">
               <img
-                alt="..."
-                className="max-w-full rounded-lg shadow-xl"
+                width="1920"
+                height="1537"
+                alt="two people conducting an interview"
+                className="max-w-full rounded-lg shadow-xl w-full"
                 style={{
                   transform:
                     "scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)",
                 }}
-                src="/img/interview.jpg"
+                src="/img/interview.webp"
               />
             </div>
           </div>
