@@ -38,7 +38,7 @@ export default function Navbar(props) {
               </li>
 
               <li className="flex items-center">
-                <a href="/admin/interview"><button
+                <a href="/user/interview"><button
                   className="bg-slate-700 text-white active:bg-slate-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                   type="button"
                 >

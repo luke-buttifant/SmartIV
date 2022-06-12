@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useSession } from "next-auth/react"
 
 // ../../components
 
@@ -14,6 +15,9 @@ import Footer from "../../components/Footers/Footer.js";
 
 
 export default function Settings() {
+  const { data: session, status } = useSession()
+
+  if (status === "authenticated") {
   return (
     <>
     <Navbar />
@@ -22,12 +26,12 @@ export default function Settings() {
           <CardSettings />
         </div>
         <div className="w-full lg:w-4/12 px-4">
-          <CardProfile />
+          <CardProfile name={session.user.name} email={session.user.email} img={session.user.image} />
         </div>
       </div>
       <Footer />
     </>
   );
 }
-
+}
 Settings.layout = Admin;
