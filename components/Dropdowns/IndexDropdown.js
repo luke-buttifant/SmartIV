@@ -24,7 +24,7 @@ const IndexDropdown = () => {
     return (
       <>
       <a
-        className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+        className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold mx-auto"
         href="#pablo"
         ref={btnDropdownRef}
         onClick={(e) => {
@@ -37,8 +37,8 @@ const IndexDropdown = () => {
       <div
         ref={popoverDropdownRef}
         className={
-          (dropdownPopoverShow ? "block " : "hidden ") +
-          "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 w-[100%] md:w-48"
+          (dropdownPopoverShow ? "flex flex-col " : "hidden ") +
+          "bg-white text-base z-50  py-2 list-none text-left rounded shadow-lg min-w-48 md:w-48"
         }
       >
           <a

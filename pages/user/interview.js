@@ -123,14 +123,14 @@ export default function Landing() {
  
         <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 mt-4">Please enter an interview question!</label>
         <textarea ref={textBox} id="message" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
-        <div className="flex flex-rows mt-10 gap-4">
-          <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg" onClick={handleAnswerOptionClick}>Get Random Question</button>
-          <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg" onClick={handleAdd}>Add Question</button>
-          <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg" onClick={handleFinish}>Finish</button>
+        <div className="flex flex-rows mt-2 gap-1 md:gap-4">
+          <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg w-[100%]" onClick={handleAnswerOptionClick}>Get Random Question</button>
+          <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg  w-[100%]" onClick={handleAdd}>Add Question</button>
+          <button className="mx-auto py-2 px-6 bg-gray-700 text-white rounded-lg  w-[100%]" onClick={handleFinish}>Finish</button>
         </div>
         <div className="container mb-2 flex mx-auto w-full items-center justify-center mt-10"
         >
-          <ul className="grid grid-cols-3 p-4">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 ">
             {interviewQuestions.map((question, i) => {
               return (
                 <li key={i} className="border-gray-400 flex flex-col mt-2 bg-gray-700 rounded-2xl border-2 p-6 hover:shadow-2xl text-white transition duration-200 ease-in-out transform hover:-translate-y-1 min-w-[100%]">
