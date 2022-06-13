@@ -1,3 +1,3 @@
 const dev = process.env.NODE_ENV !== 'production';
 
-export const server = dev ? 'http://localhost:3000' : 'www.smart-iv.software';
+export const server = dev ? 'http://localhost:3000' : 'http://www.smart-iv.software';
