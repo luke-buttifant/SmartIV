@@ -1,4 +1,6 @@
 import React, { useReducer, useState, useRef } from "react";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
 
 import Navbar from "../../components/Navbars/IndexNavbar.js";
 import WebcamCapture from "../../components/interview/webcamCapture";
@@ -9,6 +11,7 @@ import Sidebar from "../../components/Navbars/sidebar.js";
 
 export default function Landing() {
   const textBox = useRef();
+  const [snackbar, setSnackbar] = useState(false)
   const [interviewQuestions, setInterviewQuestions] = useState([])
   const [isFinished, setIsFinished] = useState(false)
 
@@ -27,9 +30,21 @@ export default function Landing() {
   }
 
   const handleAdd = () => {
-    const textBoxVal = textBox.current.value
-    setInterviewQuestions([...interviewQuestions, textBoxVal])
-    textBox.current.value = ''
+    if(textBox.current.value != ""){
+      setInterviewQuestions([...interviewQuestions, textBox.current.value])
+      textBox.current.value = ''
+    } 
+    else{
+      setSnackbar(true)
+    }
+  }
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbar(false);
   }
 
   const handleRemove = (question) => {
@@ -66,7 +81,7 @@ export default function Landing() {
       <Navbar transparent />
       <div className="w-[80%] mx-auto mt-24">
         <div className="grid grid-cols-1 md:flex md:flex-row">
-        <div className="w-52 md:w-96 mx-auto md:mx-0"><img src="/img/questions.jpg"></img></div>
+        <div className="w-52 md:w-96 mx-auto md:mx-0"><img width="100%" height="100%" alt="man sat operating laptop confused" src="/img/questions.webp"></img></div>
         <div><h1 className="font-bold text-4xl lg:text-6xl lg:mt-16 md:mt-8 mt-4">
           Interview Questions
         </h1>
@@ -107,6 +122,13 @@ export default function Landing() {
             })}
           </ul>
         </div>
+        <div className="mx-auto">
+        <Snackbar open={snackbar} autoHideDuration={6000} onClose={handleSnackbarClose} anchorOrigin={{vertical: 'bottom', horizontal: 'center' }}>
+        <MuiAlert onClose={handleSnackbarClose} severity="error" sx={{ width: '100%' }}>
+          Please enter a question!
+        </MuiAlert>
+      </Snackbar>
+      </div>
       </div>
     </>
   );

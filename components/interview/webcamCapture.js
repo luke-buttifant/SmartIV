@@ -110,7 +110,7 @@ export default function WebcamCapture(questions) {
         </>
       ) : (
         <div className="w-[100%] justify-center items-center">
-           <button className="bg-red-50 py-2 px-6 rounded-lg mt-2 mx-auto text-centre" onClick={handleStartCaptureClick}>Start Interview</button>
+           <button id="interviewBtn" className="bg-red-50 py-2 px-6 rounded-lg mt-2 mx-auto text-centre" onClick={handleStartCaptureClick}>Start Interview</button>
            
         </div>
       )}
