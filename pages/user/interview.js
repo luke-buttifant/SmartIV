@@ -1,6 +1,7 @@
-import React, { useReducer, useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import MuiAlert from '@mui/material/Alert';
+import { MutatingDots } from  'react-loader-spinner'
 
 import Navbar from "../../components/Navbars/IndexNavbar.js";
 import WebcamCapture from "../../components/interview/webcamCapture";
@@ -9,11 +10,14 @@ import Animations from "../../components/interview/animations.js";
 import Sidebar from "../../components/Navbars/sidebar.js";
 
 
+
 export default function Landing() {
   const textBox = useRef();
   const [snackbar, setSnackbar] = useState(false)
   const [interviewQuestions, setInterviewQuestions] = useState([])
   const [isFinished, setIsFinished] = useState(false)
+  const [loading, setLoading] = useState(true)
+
 
   const questions = ['Tell me something about yourself.', "How did you hear about this position?", "Why do you want to work here?", "Why did you decide to apply for this position?", "What is your greatest strength?",
     "What are your strengths and weaknesses?", "What do you know about this company/organization?"]
@@ -60,7 +64,34 @@ export default function Landing() {
 
   }
 
-  if(isFinished){
+  useEffect(() => {
+    const onPageLoad = () => {
+      setLoading(false);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
+
+  if(isFinished && loading){
+    return(
+      <>
+      <MutatingDots 
+          height="100"
+          width="100"
+          color='grey'
+          ariaLabel='loading'/>
+      </>
+    )
+  }
+
+  if(isFinished && !loading){
     return(
       <>
       <Navbar transparent/>
@@ -68,7 +99,7 @@ export default function Landing() {
       <main className="min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56">
           <div><Animations  /></div>
-          <div><WebcamCapture questions={interviewQuestions}/></div>
+          <div className="min-w-[100%] min-h-full"><WebcamCapture questions={interviewQuestions}/></div>
         </div>
       </main>
       <Footer />

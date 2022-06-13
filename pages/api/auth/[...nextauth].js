@@ -44,6 +44,13 @@ export default NextAuth({
   jwt: {
       signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
   }, 
+  callbacks: {
+    async session({session, token, user}){
+    session.user.bio = user.bio
+    session.user.interviews_practised = user.interviews_practised
+    return session
+    }
+  },
   database: process.env.DATABASE_URL,
   adapter: PrismaAdapter(prisma)
 })

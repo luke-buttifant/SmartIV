@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react"
 
 // ../../components
@@ -16,17 +16,21 @@ import Footer from "../../components/Footers/Footer.js";
 
 export default function Settings() {
   const { data: session, status } = useSession()
+  console.log(session)
+
+
 
   if (status === "authenticated") {
   return (
     <>
     <Navbar />
       <div className=" mt-24 flex flex-wrap">
-        <div className="w-full lg:w-8/12 px-4">
-          <CardSettings />
-        </div>
         <div className="w-full lg:w-4/12 px-4">
-          <CardProfile name={session.user.name} email={session.user.email} img={session.user.image} />
+        <CardProfile name={session.user.name} email={session.user.email} img={session.user.image} interviews={session.user.interviews_practised} bio={session.user.bio}/>
+        </div>
+        <div className="w-full lg:w-8/12 px-4">
+          
+          <CardSettings firstName={session.user.name.split(" ")[0]} lastName={session.user.name.split(" ")[1]} email={session.user.email} bio={session.user.bio} />
         </div>
       </div>
       <Footer />

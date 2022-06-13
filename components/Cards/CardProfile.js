@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 
-export default function CardProfile({name, email, img}) {
+export default function CardProfile(props) {
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16 min-h-screen">
@@ -12,7 +12,7 @@ export default function CardProfile({name, email, img}) {
               <div className="relative">
                 <img
                   alt="..."
-                  src={img}
+                  src={props.img}
                   className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                 />
               </div>
@@ -21,7 +21,7 @@ export default function CardProfile({name, email, img}) {
               <div className="flex justify-center py-4 lg:pt-4 pt-8">
                 <div className="p-3 text-center">
                   <span className="text-xl font-bold block uppercase tracking-wide text-slate-600">
-                    0
+                    {props.interviews}
                   </span>
                   <span className="text-sm text-slate-400">Interviews Practised</span>
                 </div>
@@ -30,30 +30,19 @@ export default function CardProfile({name, email, img}) {
           </div>
           <div className="text-center mt-12">
             <h3 className="text-xl font-semibold leading-normal mb-2 text-slate-700 mb-2">
-              {name}
+              {props.name}
             </h3>
             <div className="text-sm leading-normal mt-0 mb-2 text-slate-400 font-bold uppercase">
               <i className="fas fa-map-marker-alt mr-2 text-lg text-slate-400"></i>{" "}
-              {email}
+              {props.email}
             </div>
           </div>
           <div className="mt-10 py-10 border-t border-slate-200 text-center">
             <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-9/12 px-4">
                 <p className="mb-4 text-lg leading-relaxed text-slate-700">
-                  An artist of considerable range, Jenna the name taken by
-                  Melbourne-raised, Brooklyn-based Nick Murphy writes, performs
-                  and records all of his own music, giving it a warm, intimate
-                  feel with a solid groove structure. An artist of considerable
-                  range.
+                  {props.bio}
                 </p>
-                <a
-                  href="#pablo"
-                  className="font-normal text-sky-500"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Show more
-                </a>
               </div>
             </div>
           </div>
