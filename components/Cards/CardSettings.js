@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Router from 'next/router'
 
 // components
@@ -7,6 +7,8 @@ export default function CardSettings(props) {
   const fName = useRef();
   const lName = useRef();
   const bio = useRef();
+
+  const [currentBioLength, setCurrentBioLength] = useState()
   
 
   const submitHandler = async(e) => {
@@ -30,6 +32,13 @@ export default function CardSettings(props) {
     }
   }
 
+  useEffect(() => {
+    setCurrentBioLength(bio.current.value.length)
+  })
+
+  const onChange = () => {
+    setCurrentBioLength(bio.current.value.length)
+  }
 
   return (
     <>
@@ -102,27 +111,26 @@ export default function CardSettings(props) {
             </div>
 
             <hr className="mt-6 border-b-1 border-slate-300" />
-
-            <h6 className="text-slate-400 text-sm mt-3 mb-6 font-bold uppercase">
-              About Me
-            </h6>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap mt-6">
               <div className="w-full lg:w-12/12 px-4">
                 <div className="relative w-full mb-3">
                   <label
                     className="block uppercase text-slate-600 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    About me
+                    <div className="flex flex-row"><div>About me -</div><div className="text-xs opacity-50 ml-1">{currentBioLength}/150</div></div>
                   </label>
                   <textarea
+                  maxLength={150}
                   ref={bio}
                     type="text"
                     className="border-0 px-3 py-3 placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     rows="4"
                     defaultValue={props.bio}
+                    onChange={onChange}
                   ></textarea>
                 </div>
+                <div></div>
               </div>
             </div>
         </div>
