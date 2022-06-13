@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { MutatingDots } from  'react-loader-spinner'
+import {AiFillDelete} from "react-icons/ai"
 
 import Navbar from "../../components/Navbars/IndexNavbar.js";
 import WebcamCapture from "../../components/interview/webcamCapture";
@@ -131,22 +132,22 @@ export default function Landing() {
         </div>
         <div className="mb-2 flex mx-auto w-full items-center justify-center mt-10"
         >
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4 ">
+          <ul className="grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-4 p-4 ">
             {interviewQuestions.map((question, i) => {
               return (
                 <li key={i} className="border-gray-400 flex flex-col mt-2 bg-gray-700 rounded-2xl border-2 p-6 hover:shadow-2xl text-white transition duration-200 ease-in-out transform hover:-translate-y-1 min-w-[100%]">
                   <div
-                    className="select-none flex flex-1 items-center"
+                    className="select-none grid grid-cols-3 items-center"
                   >
-                    <div className="flex-1 pl-1 mr-16">
+                    <div className=" pl-1 col-span-2 mr-10">
                       <div className="font-medium">
                         {question}
                       </div>
                     </div>
                     <div
-                      key={question} onClick={(question) => handleRemove(question)} className="w-1/4 text-wrap text-center flex text-white text-bold flex-col rounded-md bg-red-500 justify-center items-center mr-10 p-2 hover:bg-red-600 cursor-pointer"
+                      key={question} onClick={(question) => handleRemove(question)} className="text-center flex text-white text-bold flex-col rounded-md bg-red-500 justify-center items-center mr-10 p-2 hover:bg-red-600 cursor-pointer"
                     >
-                      Delete
+                     <AiFillDelete />
                     </div>
                   </div>
                 </li>
