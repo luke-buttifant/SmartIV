@@ -1,6 +1,5 @@
 import {React, useRef, useState, useCallback} from "react";
 import Webcam from "react-webcam";
-import { randInt } from "three/src/math/mathutils";
 
 export default function WebcamCapture(questions) {
   var sdk = require("microsoft-cognitiveservices-speech-sdk");
@@ -79,7 +78,7 @@ export default function WebcamCapture(questions) {
   function askQuestion(){
     let question; 
     questionCount === 0 ? question = greeting + questions.questions[questionCount] : 
-    question = openingLines[randInt(0, openingLines.length)] + questions.questions[questionCount]
+    question = openingLines[Math.random() * openingLines.length + 1] + questions.questions[questionCount]
 
       synthesizer.speakTextAsync(question, 
       function (result) {
