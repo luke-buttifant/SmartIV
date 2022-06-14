@@ -59,7 +59,7 @@ const width = GetWindowSize()
           </div>
           <div className=" px-4 flex flex-col ">
           <button
-            className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            className={`cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none ${animateHeader ? "text-white" : "bg-white"}`}
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
@@ -71,7 +71,7 @@ const width = GetWindowSize()
               (navbarOpen ? " flex" : " hidden")
             }
           >
-            <ul className={`flex flex-col lg:flex-row list-none lg:ml-auto ${width < 1024 ? "absolute bg-white top-14 min-w-full left-0" : "" }`}>
+            <ul className={`flex flex-col lg:flex-row list-none lg:ml-auto  ${width < 1024 ? `fixed top-14 min-w-full left-0 ${animateHeader ? "bg-slate-700" : "bg-white"}` : "" } `}>
               <li className="flex items-center mx-auto text-center md:mb-2">
                 <IndexDropdown scrollState={animateHeader} />
               </li>
