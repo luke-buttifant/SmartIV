@@ -6,6 +6,7 @@ import '../styles/globals.css'
 import Head from "next/head"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Navbar from "../components/Navbars/IndexNavbar"
+import Modal from '../components/modal/developmentModal';
 
 export default function App({
   Component,
@@ -33,6 +34,7 @@ export default function App({
       <meta name="author" content="Luke Buttifant" />
     </Head>
     
+    <Modal />
     <SessionProvider session={session}>
     <Navbar fixed />
       <Component {...pageProps} />
