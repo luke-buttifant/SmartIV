@@ -5,7 +5,6 @@ config.autoAddCss = false
 import '../styles/globals.css'
 import Head from "next/head"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Sidebar from "../components/Sidebar/Sidebar"
 import Navbar from "../components/Navbars/IndexNavbar"
 
 export default function App({

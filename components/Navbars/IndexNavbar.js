@@ -33,6 +33,7 @@ export default function Navbar(props) {
   return (
     <>
       <nav className={`${animateHeader ? "bg-slate-700 dark:bg-slate-600" : " bg-white dark:bg-transparent"} top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg  shadow  transition duration-500 ease-in-out ${animateHeader && 'bg-slate-700'}`}>
+        
         <label className={`${animateHeader ? "bg-white text-slate-700 dark:text-white dark:bg-slate-700" : "bg-slate-700"} swap swap-rotate text-white rounded py-2 `}>
 
           <input className="hidden" type="checkbox" />

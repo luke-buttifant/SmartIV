@@ -9,6 +9,7 @@ import {AiFillGithub} from "react-icons/ai"
 import {DiOpensource} from "react-icons/di"
 
 
+import Modal from '../components/modal/developmentModal';
 import IndexNavbar from "../components/Navbars/IndexNavbar.js";
 import Footer from "../components/Footers/Footer.js";
 
@@ -17,6 +18,7 @@ export default function Index() {
   return (
     <>
       <div className="bg-white dark:bg-slate-700 ">
+      <Modal />
       <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
         <div className="container mx-auto items-center flex flex-wrap">
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
