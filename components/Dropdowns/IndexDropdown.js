@@ -24,7 +24,7 @@ const IndexDropdown = (props) => {
     return (
       <>
                 <div className="dropdown mx-auto mb-2 md:mb-0 ">
-        <label tabIndex={0} className={`${props.scrollState ? "text-white" : "text-slate-700"} rounded-btn outline-none text-sm btn-sm cursor-pointer`}>Profile</label>
+        <label tabIndex={0} className={`${props.scrollState ? "text-white" : "text-slate-700 dark:text-white"} rounded-btn outline-none text-sm btn-sm cursor-pointer`}>Profile</label>
         <ul tabIndex={0} className={`${props.scrollState ? "text-white bg-slate-700" : "text-slate-700 bg-white"} menu dropdown-content p-2 shadow rounded-box w-52 mt-4`}>
           <li><a href="/user/profile">View Profile</a></li> 
           <li><a href="/user/settings">Account Settings</a></li>
