@@ -37,7 +37,7 @@ const IndexDropdown = (props) => {
   }
   return (
     <>
-      <button className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center" onClick={() => signIn()}>Sign in</button>
+      <button className={`${props.scrollState ? "text-white" : "text-slate-700 dark:text-white"} text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-center`}  onClick={() => signIn()}>Sign in</button>
     </>
   )
 };

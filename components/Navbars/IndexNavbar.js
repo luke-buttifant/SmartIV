@@ -63,7 +63,7 @@ export default function Navbar(props) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="flex items-center">
-                { auth ? <a href="/auth/signin" className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs font-bold cursor-pointer uppercase">SIGN IN</a> : <IndexDropdown scrollState={animateHeader} />}
+                <IndexDropdown scrollState={animateHeader} />
               </li>
 
               <li className="flex items-center mx-auto">
