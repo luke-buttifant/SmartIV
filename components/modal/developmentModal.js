@@ -35,10 +35,11 @@ const Modal = () => {
           });
     }
     return () => {
-        
+      if(modalClose.current){  
           modalClose.current.removeEventListener("click", function() {
             modalBox.current.classList.remove('hidden')
           });
+        }
         }});
 
 
