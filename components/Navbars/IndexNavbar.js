@@ -6,7 +6,7 @@ import IndexDropdown from "../Dropdowns/IndexDropdown.js";
 export default function Navbar(props) {
   const [auth, setAuth] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   function toggleDarkMode(e) {
     if (localStorage.theme === 'light') {
@@ -32,7 +32,7 @@ export default function Navbar(props) {
 
   return (
     <>
-      <nav className={`${animateHeader ? "bg-white text-slate-700" : "bg-slate-700"} top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg  shadow bg-white transition duration-500 ease-in-out ${animateHeader && 'bg-slate-700'}`}>
+      <nav className={`${animateHeader ? "bg-slate-700" : " bg-white text-slate-700"} top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg  shadow  transition duration-500 ease-in-out ${animateHeader && 'bg-slate-700'}`}>
         <label className={`${animateHeader ? "bg-white text-slate-700" : "bg-slate-700"} swap swap-rotate text-white rounded py-2 `}>
 
           <input className="hidden" type="checkbox" />
@@ -63,8 +63,7 @@ export default function Navbar(props) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="flex items-center">
-                {auth ? <a href="/auth/signin" className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs font-bold cursor-pointer uppercase">SIGN IN</a> : <IndexDropdown scrollState={animateHeader} />}
-
+                { auth ? <a href="/auth/signin" className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs font-bold cursor-pointer uppercase">SIGN IN</a> : <IndexDropdown scrollState={animateHeader} />}
               </li>
 
               <li className="flex items-center mx-auto">
@@ -89,6 +88,7 @@ export default function Navbar(props) {
 
 export async function getServerSideProps(context) {
   const session = await getSession({ req: context.req });
+  setLoading(false)
   if (session?.user) {
     setAuth(true)
   }

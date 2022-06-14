@@ -35,7 +35,7 @@ export default function App({
     </Head>
     
     <SessionProvider session={session}>
-    <Navbar />
+    <Navbar fixed />
       <Component {...pageProps} />
     </SessionProvider>
     </>
