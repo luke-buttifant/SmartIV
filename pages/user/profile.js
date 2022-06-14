@@ -46,29 +46,30 @@ export default function Profile() {
           <div className="container mx-auto px-4">
             <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64 dark:bg-slate-700">
               <div className="px-6">
-                <div className="flex flex-wrap justify-center">
-                  <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                    <div className="relative">
-                      <img
-                        alt="..."
-                        src={session.user.image}
-                        className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                    <div className="py-6 px-3 mt-32 sm:mt-0">
-                      <a href="/user/settings"
-                        className="bg-slate-700 dark:bg-slate-100 dark:text-slate-700 active:bg-slate-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                <div className="grid grid-cols-1 md:grid-cols-3 justify-center">
+
+                  <div className="col-span-1 hidden md:flex">
+                    <div className="py-6 px-3 mt-32 sm:mt-0 w-[100%]">
+                      <button href="/user/settings"
+                        className="bg-slate-700 dark:bg-slate-100 dark:text-slate-700 active:bg-slate-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150 "
                         type="button"
                       >
                         Edit Info
-                      </a>
+                      </button>
                     </div>
                   </div>
-                  <div className="w-full lg:w-4/12 px-4 lg:order-1">
-                    <div className="flex justify-center py-4 lg:pt-4 pt-8">
-                      <div className="mr-4 p-3 text-center">
+                  <div className="col-span-1">
+                    <div className="relative mx-auto text-center">
+                      <img
+                        alt="..."
+                        src={session.user.image}
+                        className="shadow-xl rounded-full h-auto border-none md:absolute -mt-16  max-w-150-px mx-auto md:left-1/2 md:transform md:-translate-x-1/2 "
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-1">
+                    <div className=" justify-center py-4 lg:pt-4 pt-4">
+                      <div className=" p-3 text-center">
                         <span className="text-xl font-bold block uppercase tracking-wide text-slate-600 dark:text-slate-100">
                           {session.user.interviews_practised}
                         </span>
@@ -97,6 +98,17 @@ export default function Profile() {
                     </div>
                   </div>
                 </div>
+                <div className="col-span-1 flex md:hidden">
+                    <div className="py-6 px-3 sm:mt-0 min-w-[100%]">
+                      <button href="/user/settings"
+                        className="bg-slate-700 dark:bg-slate-100 dark:text-slate-700 active:bg-slate-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150
+                        min-w-[100%]"
+                        type="button"
+                      >
+                        Edit Info
+                      </button>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
