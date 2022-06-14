@@ -8,7 +8,6 @@ export default function Profile() {
   if (status === "authenticated") {
   return (
     <>
-      <Navbar transparent />
       <main className="profile-page">
         <section className="relative block h-500-px">
           <div
@@ -24,7 +23,7 @@ export default function Profile() {
             ></span>
           </div>
           <div
-            className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-16"
+            className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-16 " 
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -37,15 +36,15 @@ export default function Profile() {
               y="0"
             >
               <polygon
-                className="text-slate-200 fill-current"
+                className="text-slate-200 fill-current dark:text-slate-500"
                 points="2560 0 2560 100 0 100"
               ></polygon>
             </svg>
           </div>
         </section>
-        <section className="relative py-16 bg-slate-200">
+        <section className="relative py-16 bg-slate-200 dark:bg-slate-500">
           <div className="container mx-auto px-4">
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64 dark:bg-slate-700">
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
@@ -60,7 +59,7 @@ export default function Profile() {
                   <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
                     <div className="py-6 px-3 mt-32 sm:mt-0">
                       <a href="/user/settings"
-                        className="bg-slate-700 active:bg-slate-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                        className="bg-slate-700 dark:bg-slate-100 dark:text-slate-700 active:bg-slate-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                         type="button"
                       >
                         Edit Info
@@ -70,10 +69,10 @@ export default function Profile() {
                   <div className="w-full lg:w-4/12 px-4 lg:order-1">
                     <div className="flex justify-center py-4 lg:pt-4 pt-8">
                       <div className="mr-4 p-3 text-center">
-                        <span className="text-xl font-bold block uppercase tracking-wide text-slate-600">
+                        <span className="text-xl font-bold block uppercase tracking-wide text-slate-600 dark:text-slate-100">
                           {session.user.interviews_practised}
                         </span>
-                        <span className="text-sm text-slate-400">
+                        <span className="text-sm text-slate-400 dark:text-slate-100">
                           Interviews Practised
                         </span>
                       </div>
@@ -81,7 +80,7 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className="text-center mt-12">
-                  <h3 className="text-4xl font-semibold leading-normal mb-2 text-slate-700 mb-2">
+                  <h3 className="text-4xl font-semibold leading-normal mb-2 text-slate-700 dark:text-slate-100">
                   {session.user.name}
                   </h3>
                   <div className="text-sm leading-normal mt-0 mb-2 text-slate-400 font-bold uppercase">
@@ -92,16 +91,9 @@ export default function Profile() {
                 <div className="mt-10 py-10 border-t border-slate-200 text-center">
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
-                      <p className="mb-4 text-lg leading-relaxed text-slate-700">
+                      <p className="mb-4 text-lg leading-relaxed text-slate-700 dark:text-slate-100">
                      {session.user.bio}
                       </p>
-                      <a
-                        href="#pablo"
-                        className="font-normal text-sky-500"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        Show more
-                      </a>
                     </div>
                   </div>
                 </div>

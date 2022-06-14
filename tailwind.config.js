@@ -2,6 +2,8 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
+  darkMode: 'class',
+  mode: 'jit',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./pages/*/{js,ts,jsx,tsx}",
@@ -82,9 +84,19 @@ module.exports = {
     "visited",
     "disabled",
   ],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"]
+              }
+      }
+    ]
+  },
   plugins: [
     require('flowbite/plugin'),
     require("@tailwindcss/forms"),
+    require("daisyui"),
     plugin(function ({ addComponents, theme }) {
       const screens = theme("screens", {});
       addComponents([

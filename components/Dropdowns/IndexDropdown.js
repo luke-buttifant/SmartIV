@@ -4,7 +4,7 @@ import { createPopper } from "@popperjs/core";
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
-const IndexDropdown = () => {
+const IndexDropdown = (props) => {
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
@@ -23,50 +23,14 @@ const IndexDropdown = () => {
   if (session) {
     return (
       <>
-      <a
-        className="hover:text-slate-500 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold mx-auto"
-        href="#pablo"
-        ref={btnDropdownRef}
-        onClick={(e) => {
-          e.preventDefault();
-          dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
-        }}
-      >
-        Profile
-      </a>
-      <div
-        ref={popoverDropdownRef}
-        className={
-          (dropdownPopoverShow ? "flex flex-col " : "hidden ") +
-          "bg-white text-base z-50  py-2 list-none text-left rounded shadow-lg min-w-48 md:w-48"
-        }
-      >
-          <a
-            href="/user/profile"
-            className={
-              "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center"
-            }
-          >
-            View Profile
-          </a>
-          <a
-            href="/user/settings"
-            className={
-              "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center"
-            }
-          >
-            Settings
-          </a>
-        <div className="h-0 mx-4 my-2 border border-solid border-slate-100" />
-
-
-          <button onClick={() => signOut()}
-            className={
-              "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700 text-center cursor-pointer"
-            }
-          >
-            Log Out
-          </button>
+                <div className="dropdown mx-auto mb-2 md:mb-0 ">
+        <label tabIndex={0} className={`${props.scrollState ? "text-white" : "text-slate-700"} rounded-btn outline-none text-sm btn-sm cursor-pointer`}>Profile</label>
+        <ul tabIndex={0} className={`${props.scrollState ? "text-white bg-slate-700" : "text-slate-700 bg-white"} menu dropdown-content p-2 shadow rounded-box w-52 mt-4`}>
+          <li><a href="/user/profile">View Profile</a></li> 
+          <li><a href="/user/settings">Account Settings</a></li>
+          <hr></hr>
+          <li><a onClick={signOut}>Log Out</a></li>
+        </ul>
       </div>
       </>
     )

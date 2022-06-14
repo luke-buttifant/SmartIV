@@ -81,18 +81,6 @@ export default function Landing() {
     }
   }, []);
 
-  if(isFinished && loading){
-    return(
-      <>
-      <MutatingDots 
-          height="100"
-          width="100"
-          color='grey'
-          ariaLabel='loading'/>
-      </>
-    )
-  }
-
   if(isFinished && !loading){
     return(
       <>

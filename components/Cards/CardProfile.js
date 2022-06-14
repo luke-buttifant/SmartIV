@@ -5,7 +5,7 @@ import React from "react";
 export default function CardProfile(props) {
   return (
     <>
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16 min-h-screen">
+      <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-slate-700 w-full mb-6 shadow-xl rounded-lg mt-16 min-h-screen">
         <div className="px-6">
           <div className="flex flex-wrap justify-center">
             <div className="w-full px-4 flex justify-center">
@@ -20,16 +20,16 @@ export default function CardProfile(props) {
             <div className="w-full px-4 text-center mt-20">
               <div className="flex justify-center py-4 lg:pt-4 pt-8">
                 <div className="p-3 text-center">
-                  <span className="text-xl font-bold block uppercase tracking-wide text-slate-600">
+                  <span className="text-xl font-bold block uppercase tracking-wide text-slate-600 dark:text-slate-100">
                     {props.interviews}
                   </span>
-                  <span className="text-sm text-slate-400">Interviews Practised</span>
+                  <span className="text-sm text-slate-400 dark:text-slate-100">Interviews Practised</span>
                 </div>
               </div>
             </div>
           </div>
           <div className="text-center mt-12">
-            <h3 className="text-xl font-semibold leading-normal mb-2 text-slate-700 mb-2">
+            <h3 className="text-xl font-semibold leading-normal text-slate-700 mb-2 dark:text-slate-100 ">
               {props.name}
             </h3>
             <div className="text-sm leading-normal mt-0 mb-2 text-slate-400 font-bold uppercase">
@@ -40,7 +40,7 @@ export default function CardProfile(props) {
           <div className="mt-10 py-10 border-t border-slate-200 text-center">
             <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-9/12 px-4">
-                <p className="mb-4 text-lg leading-relaxed text-slate-700">
+                <p className="mb-4 text-lg leading-relaxed text-slate-700 dark:text-slate-100">
                   {props.bio}
                 </p>
               </div>
