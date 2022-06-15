@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import { AiFillDelete } from "react-icons/ai"
+import { AiFillDelete, AiFillCamera } from "react-icons/ai"
 import Webcam from "react-webcam";
 
 import Navbar from "../../components/Navbars/IndexNavbar.js";
@@ -20,12 +20,15 @@ export default function Landing() {
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [questionCount, setQuestionCount] = useState(0)
+  const [mediaError, setMediaError] = useState(false)
+
   var sdk = require("microsoft-cognitiveservices-speech-sdk");
 
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
 
 
+  
   //Webcam
   const handleStartCaptureClick = useCallback(() => {
     askQuestion();
@@ -161,6 +164,8 @@ export default function Landing() {
 
   }
 
+
+
   useEffect(() => {
     const onPageLoad = () => {
       setLoading(false);
@@ -182,9 +187,16 @@ export default function Landing() {
         <Navbar transparent />
         <Sidebar />
         <main className="min-h-screen">
-          <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56">
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56 min-h-[50vh]">
             <div><Animations className="rounded-lg" /></div>
-            <div className="min-w-[100%] min-h-full"><Webcam className="rounded-lg" muted audio ref={webcamRef} style={{ width: '100%' }} /></div>
+            <div className="min-w-full min-h-full">
+              {mediaError ? 
+              <div class="mx-auto min-w-full min-h-full rounded-3xl bg-[#092540] p-20 text-center">
+    <h2 class="text-5xl font-bold leading-tight text-white">No camera detected!</h2>
+    <p class="mt-5 text-xl leading-8 text-white">If this is an unexpected error please ensure that the website has permission to access your camera.</p>
+    <AiFillCamera className="mx-auto text-white mt-10" size={100}/>
+            </div>
+            : <Webcam onUserMediaError={() => setMediaError(true)} className="rounded-lg" muted audio ref={webcamRef} style={{ width: '100%' }} /> }</div>
           </div>
           <div className="container mx-auto gap-0">
             <div className="flex flex-row mx-auto">
