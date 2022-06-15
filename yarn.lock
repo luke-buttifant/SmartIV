@@ -661,7 +661,7 @@
     "utility-types" "^3.10.0"
     "zustand" "^3.5.13"
 
-"@react-three/fiber@^8.0.22", "@react-three/fiber@>=6.0", "@react-three/fiber@>=8.0":
+"@react-three/fiber@^8.0.22", "@react-three/fiber@>=6.0", "@react-three/fiber@>=7.0", "@react-three/fiber@>=8.0":
   "integrity" "sha512-HkQR+SKm0Bi4qq9sxCV2rv2aXxEhWPcj52bLOCiW3WpF8sGJtmdc/pP4ih5gXwN7I5NMTa2eDeoSYkIPOwt1/g=="
   "resolved" "https://registry.npmjs.org/@react-three/fiber/-/fiber-8.0.22.tgz"
   "version" "8.0.22"
@@ -673,6 +673,15 @@
     "scheduler" "^0.21.0"
     "suspend-react" "^0.0.8"
     "zustand" "^3.7.1"
+
+"@react-three/postprocessing@^2.3.2":
+  "integrity" "sha512-e1veVao9XR3BP/J6OdvbR7yQq7d3lpOQuKvSQJ9LWLhPziBzHeRazU63cIwf5Dh4qy0TuxswmgWKxRn8Sxp79Q=="
+  "resolved" "https://registry.npmjs.org/@react-three/postprocessing/-/postprocessing-2.3.2.tgz"
+  "version" "2.3.2"
+  dependencies:
+    "postprocessing" "6.26.3"
+    "react-merge-refs" "^1.1.0"
+    "three-stdlib" "^2.8.11"
 
 "@tailwindcss/forms@^0.5.2":
   "integrity" "sha512-pSrFeJB6Bg1Mrg9CdQW3+hqZXAKsBrSG9MAfFLKy1pVA4Mb4W7C0k7mEhlmS2Dfo/otxrQOET7NJiJ9RrS563w=="
@@ -3565,6 +3574,16 @@
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.1"
 
+"postprocessing@^6.27.0":
+  "integrity" "sha512-9sYqJdXbE+cizbRS1oewZXAYVmFUCvWWN/7/6BdiIrY2nSD5Ly2iZfqKhTwQH12uGnT3eDpiW1n+BzRB4BBIlA=="
+  "resolved" "https://registry.npmjs.org/postprocessing/-/postprocessing-6.27.0.tgz"
+  "version" "6.27.0"
+
+"postprocessing@6.26.3":
+  "integrity" "sha512-f9VMDQSLngrdJByPjza4pNHZWoEnGFdxj6GsgqGd2+RM3PYFTCZapgpX9W/FspRUg6Is38vkUfjvLxWyfBHbhQ=="
+  "resolved" "https://registry.npmjs.org/postprocessing/-/postprocessing-6.26.3.tgz"
+  "version" "6.26.3"
+
 "potpack@^1.0.1":
   "integrity" "sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ=="
   "resolved" "https://registry.npmjs.org/potpack/-/potpack-1.0.2.tgz"
@@ -3669,7 +3688,7 @@
   dependencies:
     "prop-types" "^15.6.0"
 
-"react-dom@^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^17 || ^18", "react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@^18.1.0", "react-dom@>= 16.3.0", "react-dom@>=16.13", "react-dom@>=16.2.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0", "react-dom@>=18.0":
+"react-dom@^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^17 || ^18", "react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@^18.1.0", "react-dom@>= 16.3.0", "react-dom@>=16.13", "react-dom@>=16.2.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0", "react-dom@>=17.0", "react-dom@>=18.0":
   "integrity" "sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.1.0.tgz"
   "version" "18.1.0"
@@ -4493,7 +4512,7 @@
   "resolved" "https://registry.npmjs.org/three-mesh-bvh/-/three-mesh-bvh-0.5.11.tgz"
   "version" "0.5.11"
 
-"three-stdlib@^2.10.2":
+"three-stdlib@^2.10.2", "three-stdlib@^2.8.11":
   "integrity" "sha512-A4++o7962jrRDo0Mm2I+2LaT62RRA8p8IJyHFnPfOxSk+90qGSm2vSfSdJ+3HugzABjStQyQuvnQmdxxZolzkw=="
   "resolved" "https://registry.npmjs.org/three-stdlib/-/three-stdlib-2.10.2.tgz"
   "version" "2.10.2"
@@ -4509,7 +4528,7 @@
     "potpack" "^1.0.1"
     "zstddec" "^0.0.2"
 
-"three@^0.141.0", "three@>= 0.123.0", "three@>=0.103.0", "three@>=0.122.0", "three@>=0.126", "three@>=0.133", "three@>=0.137":
+"three@^0.141.0", "three@>= 0.107.0 < 0.140.0", "three@>= 0.107.0 < 0.142.0", "three@>= 0.123.0", "three@>=0.103.0", "three@>=0.122.0", "three@>=0.126", "three@>=0.133", "three@>=0.136.0", "three@>=0.137":
   "integrity" "sha512-JaSDAPWuk4RTzG5BYRQm8YZbERUxTfTDVouWgHMisS2to4E5fotMS9F2zPFNOIJyEFTTQDDKPpsgZVThKU3pXA=="
   "resolved" "https://registry.npmjs.org/three/-/three-0.141.0.tgz"
   "version" "0.141.0"

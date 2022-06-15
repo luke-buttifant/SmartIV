@@ -1,35 +1,43 @@
-import React, { Suspense, useEffect, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { Suspense, useRef, useEffect } from 'react';
+import { Canvas, Rig, Triangle, useThree, useFrame, useLoader } from '@react-three/fiber';
+import { useGLTF, MeshReflectorMaterial, Environment, Stage, PresentationControls, OrbitControls } from '@react-three/drei';
+import * as THREE from 'three'
 
-
-import Interviewer from "../../Interviewer"
-import ConferenceRoom from "../../ConferenceRoom"
+import Interviewer from "../../New_male"
+import Desk from "../../Desk"
+import OfficeScene from "../../Office-scene"
 
 const deg2rad = degrees => degrees * (Math.PI / 180);
 
 export default function Animations(questions) {
+ 
+  const Camera = (props) => {
+    const ref = useRef();
+    const set = useThree((state) => state.set);
+    useEffect(() => void set({ camera: ref.current }), []);
+    useFrame(() => {
+      ref.current.updateMatrixWorld();
+      ref.current.position.set(0, -0.5 ,3);
+      ref.current.rotation.set(-0.4, 0.4, 0)
+    })
+    return <perspectiveCamera ref={ref} {...props} />;
+  };
+
   return (
     <>
-          <Canvas
-          camera={{ position: [0, 5.6, 10], fov: 85, zoom: 17, near: 0.01, far: 1000}}
-         style={{
-            marginInline: "auto",
-            backgroundColor: '#F5F5F5',
-            width: '100%'
-         }}
-      >
-         <ambientLight intensity={1} />
-         <ambientLight intensity={0.1} />
-         <directionalLight intensity={0.4} />
-         <Suspense fallback={null}>
-         <ConferenceRoom position={[0, 0, 0]} scale={[100,100,100]} />
-         <mesh position={[0, 0, 0]} scale={1.2}>
-         <Interviewer position={[0, 0, 0]} />
-         </mesh>
-        
+      
+      <Canvas dpr={[1, 2]} shadows >
+        <Camera />
+      <color attach="background" args={['#101010']} />
+      <ambientLight intensity={1} />
+<spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
+      <Suspense fallback={null}>
+
+        <mesh rotation={[0, 0, 0]} position={[-1.1, -6, -26]} scale={3}><OfficeScene rotation={[0, 91.6, 0]}  scale={1.3} position={[10, 0, 0]}/></mesh>
          
-         </Suspense>
-      </Canvas>
+          <mesh position={[-1, -3.7, 0.9]} scale={2}><Interviewer  /></mesh>
+      </Suspense>
+    </Canvas>
     </>
   );
 }
