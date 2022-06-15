@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbars/IndexNavbar.js";
 import Footer from "../../components/Footers/Footer.js";
 import Animations from "../../components/interview/animations.js";
 import Sidebar from "../../components/Navbars/sidebar.js";
+import { height } from "@mui/system";
 
 
 
@@ -21,6 +22,7 @@ export default function Landing() {
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [questionCount, setQuestionCount] = useState(0)
   const [mediaError, setMediaError] = useState(false)
+  const canvas = useRef();
 
   var sdk = require("microsoft-cognitiveservices-speech-sdk");
 
@@ -28,7 +30,6 @@ export default function Landing() {
   const mediaRecorderRef = useRef(null);
 
 
-  
   //Webcam
   const handleStartCaptureClick = useCallback(() => {
     askQuestion();
@@ -184,20 +185,18 @@ export default function Landing() {
   if (isFinished && !loading) {
     return (
       <>
-        <Navbar transparent />
-        <Sidebar />
+        {/* <Sidebar /> */}
         <main className="min-h-screen">
-          <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56 max-h-[50vh]">
-            <div><Animations className="rounded-lg" /></div>
-            <div className="min-w-full min-h-full">
-            <div class="mx-auto min-w-full min-h-full">
-              {mediaError ? 
-              <div className="rounded-3xl bg-[#092540] p-20 text-center">
-    <h2 class="text-5xl font-bold leading-tight text-white">No camera detected!</h2>
-    <p class="mt-5 text-xl leading-8 text-white">If this is an unexpected error please ensure that the website has permission to access your camera.</p>
-    <AiFillCamera className="mx-auto text-white mt-10" size={100}/>
-            </div>
-            : <Webcam onUserMediaError={() => setMediaError(true)} className="rounded-lg" muted audio ref={webcamRef} style={{ width: '100%' }} /> }</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56 ">
+            <div className="rounded-lg max-w-full max-h-full" ref={canvas}><Animations/></div>
+            <div className="min-w-full min-h-full ">
+              {mediaError ?
+                <div className="rounded-3xl bg-[#092540] p-20 text-center">
+                  <h2 class="text-5xl font-bold leading-tight text-white">No camera detected!</h2>
+                  <p class="mt-5 text-xl leading-8 text-white">If this is an unexpected error please ensure that the website has permission to access your camera.</p>
+                  <AiFillCamera className="mx-auto text-white mt-10" size={100} />
+                </div>
+                : <div className="rounded-lg  min-h-full"><Webcam onUserMediaError={() => setMediaError(true)}  muted audio ref={webcamRef} /> </div>}</div>
           </div>
           <div className="container mx-auto gap-0">
             <div className="flex flex-row mx-auto">
@@ -214,7 +213,6 @@ export default function Landing() {
               ) : (
                 <div className="mt-2 mx-auto"><button id="interviewBtn" className="bg-red-50 py-2 px-6 rounded-lg " onClick={handleStartCaptureClick}>Start Interview</button></div>
               )}
-  </div>
             </div>
           </div>
         </main>

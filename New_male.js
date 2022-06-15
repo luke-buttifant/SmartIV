@@ -11,7 +11,6 @@ export default function Model({ ...props }) {
   const { actions } = useAnimations(animations, group)
   
   useEffect(() => {/* highlight-line */
-    
       actions['Armature.001|mixamo.com|Layer0'].play(); /* highlight-line */
    });
   return (

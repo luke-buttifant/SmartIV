@@ -1,5 +1,7 @@
 import React, { Suspense, useRef, useEffect } from 'react';
-import { Canvas, useThree, useFrame, useLoader } from '@react-three/fiber';
+import { Canvas, Rig, Triangle, useThree, useFrame, useLoader } from '@react-three/fiber';
+import { useGLTF, MeshReflectorMaterial, Environment, Stage, PresentationControls, OrbitControls } from '@react-three/drei';
+import * as THREE from 'three'
 
 import Interviewer from "../../New_male"
 import OfficeScene from "../../Office-scene"
@@ -7,7 +9,6 @@ import OfficeScene from "../../Office-scene"
 const deg2rad = degrees => degrees * (Math.PI / 180);
 
 export default function Animations(questions) {
-  
  
   const Camera = (props) => {
     const ref = useRef();
@@ -24,7 +25,7 @@ export default function Animations(questions) {
   return (
     <>
       
-      <Canvas dpr={[1, 2]} shadows className='rounded-lg' >
+      <Canvas dpr={[1, 2]} shadows camera>
         <Camera />
       <color attach="background" args={['#101010']} />
       <ambientLight intensity={1} />
