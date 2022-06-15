@@ -185,7 +185,7 @@ export default function Landing() {
   if (isFinished && !loading) {
     return (
       <>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <main className="min-h-screen">
           <div className="grid grid-cols-1 md:grid-cols-2 mt-24 gap-4 mx-0 md:mx-10 xl:mx-56 ">
             <div className="rounded-lg max-w-full max-h-full" ref={canvas}><Animations/></div>
