@@ -1,5 +1,6 @@
 import { SessionProvider } from "next-auth/react"
 import { config } from '@fortawesome/fontawesome-svg-core'
+import {useRouter} from 'next/router';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 import '../styles/globals.css'
@@ -21,6 +22,11 @@ export default function App({
       document.documentElement.classList.remove('dark')
     }
   }
+
+  
+
+
+
   return (
     <>
     <Head>
