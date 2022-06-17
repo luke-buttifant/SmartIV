@@ -12,6 +12,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#334155",
+        secondary: "#334155"
+      },
       minHeight: {
         "screen-75": "75vh",
       },

@@ -4,9 +4,7 @@ import GetWindowSize from "../../hooks/viewport/useWindowDimensions.js";
 import IndexDropdown from "../Dropdowns/IndexDropdown.js";
 
 export default function Navbar(props) {
-  const [auth, setAuth] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [loading, setLoading] = useState(true)
 
   function toggleDarkMode(e) {
     if (localStorage.theme === 'light') {
@@ -23,9 +21,6 @@ export default function Navbar(props) {
   
 const width = GetWindowSize()
 
-  
-  
-
   useEffect(() => {
     const listener = () =>
       window.scrollY > 140 ? setAnimateHeader(true) : setAnimateHeader(false)
@@ -39,7 +34,7 @@ const width = GetWindowSize()
 
   return (
     <>
-      <nav className={`${animateHeader ? "bg-slate-700 dark:bg-slate-600" : " bg-white dark:bg-transparent"} top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg  shadow  transition duration-500 ease-in-out ${animateHeader && 'bg-slate-700'}`}>
+      <nav className={`${animateHeader ? "bg-slate-700 dark:bg-slate-600" : " bg-white dark:bg-transparent"} top-0 ${props.fixed && "fixed"} z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg  shadow  transition duration-500 ease-in-out ${animateHeader && 'bg-slate-700'}`}>
         <div className="flex flex-row gap-10 ">
         <div className={`${animateHeader ? "bg-white text-slate-700 dark:text-white dark:bg-slate-700" : "bg-slate-700"} swap swap-rotate text-white rounded py-2 `}>
 
@@ -65,6 +60,7 @@ const width = GetWindowSize()
           >
             <FaBars size={30} />
           </button>
+          
           <div
             className={
               "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none lg:mr-24" +
@@ -72,9 +68,16 @@ const width = GetWindowSize()
             }
           >
             <ul className={`flex flex-col lg:flex-row list-none lg:ml-auto  ${width < 1024 ? `fixed top-14 min-w-full left-0 ${animateHeader ? "bg-slate-700" : "bg-white"}` : "" } `}>
-              <li className="flex items-center mx-auto text-center md:mb-2">
-                <IndexDropdown scrollState={animateHeader} />
+
+            <li className="flex items-center mx-auto text-center">
+              {/* LEAD TO SUBDOMAIN */}
+                <a href="https://www.cv-builder.smart-iv.software/" className={`text-sm cursor-pointer mr-2 ${animateHeader ? "text-white": "text-primary"}`}>Resume Builder</a>
               </li>
+
+              <li className="flex items-center mx-auto text-center">
+                <IndexDropdown scrollState={animateHeader}/>
+              </li>
+
 
               <li className="flex items-center mx-auto">
                 <a href="/user/interview"><button
@@ -94,12 +97,4 @@ const width = GetWindowSize()
 
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  const session = await getSession({ req: context.req });
-  setLoading(false)
-  if (session?.user) {
-    setAuth(true)
-  }
 }
