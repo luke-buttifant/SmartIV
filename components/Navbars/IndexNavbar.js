@@ -60,6 +60,7 @@ const width = GetWindowSize()
           >
             <FaBars size={30} />
           </button>
+          
           <div
             className={
               "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none lg:mr-24" +
@@ -67,9 +68,16 @@ const width = GetWindowSize()
             }
           >
             <ul className={`flex flex-col lg:flex-row list-none lg:ml-auto  ${width < 1024 ? `fixed top-14 min-w-full left-0 ${animateHeader ? "bg-slate-700" : "bg-white"}` : "" } `}>
-              <li className="flex items-center mx-auto text-center md:mb-2">
+
+            <li className="flex items-center mx-auto text-center">
+              {/* LEAD TO SUBDOMAIN */}
+                <a href="https://www.cv-builder.smart-iv.software/" className={`text-sm cursor-pointer mr-2 ${animateHeader ? "text-white": "text-primary"}`}>Resume Builder</a>
+              </li>
+
+              <li className="flex items-center mx-auto text-center">
                 <IndexDropdown scrollState={animateHeader}/>
               </li>
+
 
               <li className="flex items-center mx-auto">
                 <a href="/user/interview"><button
